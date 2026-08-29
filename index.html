@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="游戏系统策划拆解作品集 · 星穹铁道背包 / 异环商业化 / 原神版本活动 · Cyberpunk 风格演示" />
+  <meta name="theme-color" content="#0a0a10" />
+  <title>系统策划拆解作品集 | Game System Design</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹️</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- 自定义光标 -->
+  <div id="cursor" aria-hidden="true"></div>
+
+  <!-- Loading 遮罩 -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span id="loader-pct">00</span><span class="loader-unit">%</span>
+    </div>
+  </div>
+
+  <!-- 侧边导航 -->
+  <nav class="side-nav" id="side-nav" aria-label="章节导航">
+    <ul>
+      <li class="nav-item-group">
+        <a class="nav-link nav-l1" href="#overview" data-target="overview"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">项目概述</span></a>
+        <a class="nav-link nav-l1" href="#info" data-target="info"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">项目信息</span></a>
+        <a class="nav-link nav-l1" href="#demo" data-target="demo"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">关卡演示</span></a>
+        <a class="nav-link nav-l1" href="#overview-design" data-target="overview-design"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">设计总览</span></a>
+        <a class="nav-link nav-l1" href="#blog" data-target="blog"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">随笔</span></a>
+      </li>
+      <li class="nav-item-group">
+        <a class="nav-link nav-l2" href="#l0" data-target="l0"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L0 序章</span></a>
+        <a class="nav-link nav-l2" href="#l1" data-target="l1"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L1 第一关</span></a>
+        <a class="nav-link nav-l2" href="#l2" data-target="l2"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L2 第二关</span></a>
+        <a class="nav-link nav-l2" href="#l3" data-target="l3"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L3 第三关</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <header class="hero" id="hero">
+      <div class="hero-brand" aria-hidden="true">
+        <span>关</span><span>卡</span><span>设</span><span>计</span><span>师</span>
+      </div>
+      <div class="hero-content">
+        <p class="hero-kicker">GAME SYSTEM DESIGNER · TEARDOWN PORTFOLIO</p>
+        <div class="warp-text" id="hero-warp" role="img" aria-label="系统策划拆解作品集" data-warp-text="系统策划拆解作品集" data-warp-color="#fcee0a">
+          <h1 class="hero-title warp-fallback">系统策划拆解作品集</h1>
+        </div>
+        <p class="hero-sub">以系统策划视角拆解商业游戏设计：星穹铁道背包 · 异环商业化 · 原神版本活动。</p>
+        <div class="hero-cta">
+          <a class="hero-link" href="#overview">查看项目 <span class="arrow">↓</span></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 01 拆解作品集（上：视频展示 + 简介；下：拆解案展示） -->
+    <section id="overview" class="section">
+      <div class="container">
+        <p class="sec-no">01</p>
+        <h2 class="sec-title" data-reveal="chars">游戏拆解作品集</h2>
+
+        <!-- 上半：视频展示 + 简介 -->
+        <div class="td-top">
+          <div class="td-video-col">
+            <div class="td-player">
+              <video id="td-video" controls preload="metadata" playsinline>
+                <source src="assets/videos/td-hsr.mp4" type="video/mp4" />
+              </video>
+              <div class="td-player-empty" id="td-video-empty">
+                <span class="td-play-icon">▶</span>
+                <p>视频占位 —— 将拆解讲解视频放入 <code>assets/videos/</code><br/>（td-hsr.mp4 / td-ynn.mp4 / td-genshin.mp4）</p>
+              </div>
+            </div>
+            <div class="td-playlist" role="tablist" aria-label="拆解视频列表">
+              <button class="td-pl-item is-active" data-video="assets/videos/td-hsr.mp4">
+                <span class="td-pl-idx">V1</span><span>星穹铁道 · 背包系统拆解</span>
+              </button>
+              <button class="td-pl-item" data-video="assets/videos/td-ynn.mp4">
+                <span class="td-pl-idx">V2</span><span>异环 · 商业化拆解</span>
+              </button>
+              <button class="td-pl-item" data-video="assets/videos/td-genshin.mp4">
+                <span class="td-pl-idx">V3</span><span>原神 7.0 · 版本活动拆解</span>
+              </button>
+            </div>
+          </div>
+          <div class="td-intro">
+            <h3>这是我的拆解方法论</h3>
+            <p>以<b>「目的 → 框架 → 契约 → 落地 → 迭代」</b>为主线拆解系统设计：先还原设计目的与玩家路径，再抽离核心规则与数值关系，最后回看版本迭代验证设计判断。</p>
+            <ul>
+              <li><b>玩法拆解</b>：系统循环 / 状态流转 / 时间门控 / 奖励结构</li>
+              <li><b>商业化拆解</b>：付费结构 / 生态分布 / 抽卡与交易经济</li>
+              <li><b>版本复盘</b>：上线后迭代动因（数据 / 反馈 / 节奏）</li>
+            </ul>
+            <p class="muted">三份作品均可在线查看完整拆解案（下方卡片），讲解视频正在录制中。</p>
+          </div>
+        </div>
+
+        <!-- 下半：拆解案（Word 式目录 → 点击展开） -->
+        <div class="td-toc-wrap">
+          <div class="td-toc-label" data-reveal="chars">拆解案目录 —— 点击任意一份立即展开阅读</div>
+          <ol class="td-toc">
+            <li class="td-toc-item" id="td-doc-1" data-reveal="block" aria-expanded="false">
+              <span class="td-toc-idx">1、</span>
+              <span class="td-toc-title">崩坏：星穹铁道 · 背包系统拆解</span>
+              <span class="td-toc-hint">五层反推法 · 系统循环 × 数值关系 × 容器经济学</span>
+            </li>
+            <li class="td-toc-item" id="td-doc-2" data-reveal="block" aria-expanded="false">
+              <span class="td-toc-idx">2、</span>
+              <span class="td-toc-title">异环 · 商业化与付费结构拆解</span>
+              <span class="td-toc-hint">首日流水破亿 · 角色浅抽 × 都市消费 · 五款横评</span>
+            </li>
+            <li class="td-toc-item" id="td-doc-3" data-reveal="block" aria-expanded="false">
+              <span class="td-toc-idx">3、</span>
+              <span class="td-toc-title">原神 7.0 · 版本活动系统拆解</span>
+              <span class="td-toc-hint">活动日历 × 6 类模板 × 错峰节奏 × 三层留存</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 项目信息 -->
+    <section id="info" class="section">
+      <div class="container">
+        <p class="sec-no">02</p>
+        <h2 class="sec-title">项目信息</h2>
+        <div class="info-grid">
+          <div class="info-item"><span class="info-label">类型</span><span class="info-value">【待补充】</span></div>
+          <div class="info-item"><span class="info-label">引擎</span><span class="info-value">【待补充】Unity / UE5 / Godot</span></div>
+          <div class="info-item"><span class="info-label">团队</span><span class="info-value">【待补充】人数与分工</span></div>
+          <div class="info-item"><span class="info-label">周期</span><span class="info-value">【待补充】开发时长</span></div>
+          <div class="info-item"><span class="info-label">状态</span><span class="info-value">【待补充】Demo / 上线</span></div>
+          <div class="info-item"><span class="info-label">我的职责</span><span class="info-value">【待补充】关卡 / 系统 / 叙事</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 关卡演示 -->
+    <section id="demo" class="section">
+      <div class="container">
+        <p class="sec-no">03</p>
+        <h2 class="sec-title">关卡演示</h2>
+        <div class="demo-placeholder">
+          <span class="demo-play">▶</span>
+          <p>视频演示占位 —— 放 B 站 / 本地视频 / GIF</p>
+        </div>
+        <div class="project-list">
+          <a class="project-row" href="#l0"><span class="pr-idx">L0</span><span class="pr-name">序章</span><span class="pr-tag">入场机制</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="#l1"><span class="pr-idx">L1</span><span class="pr-name">第一关（待命名）</span><span class="pr-tag">核心机制教学</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="#l2"><span class="pr-idx">L2</span><span class="pr-name">第二关（待命名）</span><span class="pr-tag">机制组合</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="#l3"><span class="pr-idx">L3</span><span class="pr-name">第三关（待命名）</span><span class="pr-tag">机制递进与情绪峰值</span><span class="pr-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 设计总览 -->
+    <section id="overview-design" class="section">
+      <div class="container">
+        <p class="sec-no">04</p>
+        <h2 class="sec-title">设计总览</h2>
+        <div class="overview-grid">
+          <article class="ov-card">
+            <h3>核心机制</h3>
+            <p>【待补充】一句话讲清玩家的核心动作与规则。</p>
+            <div class="ov-diagram mech-diagram"><span>输入</span><span>→</span><span>规则</span><span>→</span><span>反馈</span></div>
+          </article>
+          <article class="ov-card">
+            <h3>空间动线</h3>
+            <p>【待补充】玩家在关卡中的移动路径与关键节点。</p>
+            <svg class="ov-diagram flow-svg" viewBox="0 0 300 80" aria-hidden="true">
+              <path d="M10 40 H80 L100 20 H160 L180 60 H250 L270 40 H290" fill="none" stroke="#fafafa" stroke-width="2"/>
+              <circle cx="10" cy="40" r="4" fill="#fafafa"/><circle cx="290" cy="40" r="4" fill="#fafafa"/>
+            </svg>
+          </article>
+          <article class="ov-card">
+            <h3>情绪曲线</h3>
+            <p>【待补充】紧张/好奇/释然等情绪随进度的变化。</p>
+            <svg class="ov-diagram curve-svg" viewBox="0 0 300 90" aria-hidden="true">
+              <path d="M10 70 C40 70 60 60 85 45 S130 20 160 30 S220 70 290 35" fill="none" stroke="#fafafa" stroke-width="2"/>
+            </svg>
+          </article>
+          <article class="ov-card">
+            <h3>机制递进</h3>
+            <p>【待补充】机制如何从入门到组合再到颠覆。</p>
+            <div class="ov-diagram prog-diagram"><span>L0 了解</span><span>→</span><span>L1 掌握</span><span>→</span><span>L2 组合</span><span>→</span><span>L3 突破</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- L0 -->
+    <section id="l0" class="section level">
+      <div class="container">
+        <p class="sec-no">L0</p>
+        <h2 class="sec-title">序章 <span class="sec-en">PROLOGUE</span></h2>
+        <div class="level-grid">
+          <div class="level-block">
+            <h3>入场机制</h3>
+            <p>【待补充】玩家第一次接触的核心动作；如何在一分钟内建立“我能做到”的信心。</p>
+          </div>
+          <div class="level-block">
+            <h3>设计亮点</h3>
+            <ul class="highlight-list">
+              <li>【待补充】亮点 1</li>
+              <li>【待补充】亮点 2</li>
+              <li>【待补充】亮点 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L1 -->
+    <section id="l1" class="section level">
+      <div class="container">
+        <p class="sec-no">L1</p>
+        <h2 class="sec-title">第一关 <span class="sec-en">LEVEL 1</span></h2>
+        <div class="flow-player">
+          <span class="fp-label">流线播放器</span>
+          <div class="fp-track">
+            <span class="fp-seg" style="width:22%">引入</span>
+            <span class="fp-seg" style="width:34%">教学</span>
+            <span class="fp-seg" style="width:26%">挑战</span>
+            <span class="fp-seg" style="width:18%">收束</span>
+          </div>
+          <p class="fp-note">【待补充】各段落的关键事件与设计意图（时间轴）。</p>
+        </div>
+        <div class="level-grid">
+          <div class="level-block">
+            <h3>情绪曲线</h3>
+            <svg class="level-curve" viewBox="0 0 320 100" aria-hidden="true">
+              <path d="M10 80 C60 70 90 40 140 45 S210 25 250 50 S300 20 310 15" fill="none" stroke="#fafafa" stroke-width="2"/>
+            </svg>
+            <p>【待补充】曲线说明：哪个节点最紧张、哪个节点最释然。</p>
+          </div>
+          <div class="level-block">
+            <h3>设计亮点</h3>
+            <ul class="highlight-list">
+              <li>【待补充】亮点 1</li>
+              <li>【待补充】亮点 2</li>
+              <li>【待补充】亮点 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L2 -->
+    <section id="l2" class="section level">
+      <div class="container">
+        <p class="sec-no">L2</p>
+        <h2 class="sec-title">第二关 <span class="sec-en">LEVEL 2</span></h2>
+        <div class="flow-player">
+          <span class="fp-label">流线播放器</span>
+          <div class="fp-track">
+            <span class="fp-seg" style="width:20%">重述</span>
+            <span class="fp-seg" style="width:30%">组合</span>
+            <span class="fp-seg" style="width:32%">高压</span>
+            <span class="fp-seg" style="width:18%">喘息</span>
+          </div>
+          <p class="fp-note">【待补充】各段落的关键事件与设计意图（时间轴）。</p>
+        </div>
+        <div class="level-grid">
+          <div class="level-block">
+            <h3>情绪曲线</h3>
+            <svg class="level-curve" viewBox="0 0 320 100" aria-hidden="true">
+              <path d="M10 70 C50 65 70 30 110 40 S170 20 200 55 S260 75 310 20" fill="none" stroke="#fafafa" stroke-width="2"/>
+            </svg>
+            <p>【待补充】曲线说明。</p>
+          </div>
+          <div class="level-block">
+            <h3>设计亮点</h3>
+            <ul class="highlight-list">
+              <li>【待补充】亮点 1</li>
+              <li>【待补充】亮点 2</li>
+              <li>【待补充】亮点 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- L3 -->
+    <section id="l3" class="section level">
+      <div class="container">
+        <p class="sec-no">L3</p>
+        <h2 class="sec-title">第三关 <span class="sec-en">LEVEL 3</span></h2>
+        <div class="flow-player">
+          <span class="fp-label">流线播放器</span>
+          <div class="fp-track">
+            <span class="fp-seg" style="width:16%">收束</span>
+            <span class="fp-seg" style="width:28%">总攻</span>
+            <span class="fp-seg" style="width:36%">峰值</span>
+            <span class="fp-seg" style="width:20%">余韵</span>
+          </div>
+          <p class="fp-note">【待补充】各段落的关键事件与设计意图（时间轴）。</p>
+        </div>
+        <div class="level-grid">
+          <div class="level-block">
+            <h3>情绪曲线</h3>
+            <svg class="level-curve" viewBox="0 0 320 100" aria-hidden="true">
+              <path d="M10 80 C60 70 80 50 110 55 S180 60 210 35 S280 10 310 15" fill="none" stroke="#fafafa" stroke-width="2"/>
+            </svg>
+            <p>【待补充】曲线说明。</p>
+          </div>
+          <div class="level-block">
+            <h3>设计亮点</h3>
+            <ul class="highlight-list">
+              <li>【待补充】亮点 1</li>
+              <li>【待补充】亮点 2</li>
+              <li>【待补充】亮点 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 随笔 -->
+    <section id="blog" class="section">
+      <div class="container">
+        <p class="sec-no">05</p>
+        <h2 class="sec-title">随笔</h2>
+        <div class="project-list">
+          <a class="project-row" href="blog/ai-gamedesign.html"><span class="pr-idx">B1</span><span class="pr-name">AI 时代，游戏策划的技能树应该怎么点</span><span class="pr-tag">行业观察</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="blog/cocoon-devlog.html"><span class="pr-idx">B2</span><span class="pr-name">「茧中之梦」开发手记：把梦境做成玩法</span><span class="pr-tag">开发记录</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="blog/interview-notes.html"><span class="pr-idx">B3</span><span class="pr-name">校招求职笔记：从简历到面试的复盘</span><span class="pr-tag">求职复盘</span><span class="pr-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year">2026</span> 关卡设计师作品集 · 占位版</p>
+        <p class="footer-contact">联系邮箱：【待补充】 · GitHub：【待补充】</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+<script src="assets/teardowns.js"></script>
+<script src="assets/td-reader.js"></script>
+<script src="assets/scroll-reveal.js?v=3"></script>
+<script type="module" src="assets/warp-text.js"></script>
+</body>
+</html>

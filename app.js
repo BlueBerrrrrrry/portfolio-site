@@ -104,3 +104,15 @@
     btn.textContent = root.getAttribute("data-theme") === "dark" ? "☾" : "☀";
   });
 })();
+
+// ── 返回顶部 ──
+(function () {
+  const btn = document.getElementById("to-top");
+  if (!btn) return;
+  const sync = () => btn.classList.toggle("is-visible", window.scrollY > 600);
+  window.addEventListener("scroll", sync, { passive: true });
+  sync();
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+})();

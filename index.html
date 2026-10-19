@@ -43,19 +43,24 @@
 
     <!-- Hero -->
     <header class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-brand" aria-hidden="true">
         <span>关</span><span>卡</span><span>设</span><span>计</span><span>师</span>
       </div>
       <div class="hero-content">
-        <p class="hero-kicker">QUEST &amp; LEVEL DESIGNER · WHITEBOX PORTFOLIO</p>
-        <div class="warp-text" id="hero-warp" role="img" aria-label="任务与关卡策划作品集" data-warp-text="任务与关卡策划作品集" data-warp-color="#fcee0a">
+        <p class="hero-kicker"><span class="k-dot"></span>QUEST &amp; LEVEL DESIGNER<span class="k-sep">/</span>WHITEBOX PORTFOLIO</p>
+        <div class="warp-text" id="hero-warp" role="img" aria-label="任务与关卡策划作品集" data-warp-text="任务与关卡策划作品集" data-warp-color="#fcee0a" data-warp-bgcolor="transparent">
           <h1 class="hero-title warp-fallback">任务与关卡策划作品集</h1>
         </div>
-        <p class="hero-sub">第一人称潜入关卡白盒 · 从空间布局、引导节奏到演出落地 · Unreal Engine 5</p>
+        <p class="hero-sub">第一人称潜入关卡白盒。<br />从空间布局、引导节奏，到演出落地。</p>
         <div class="hero-cta">
-          <a class="hero-link" href="#info">查看项目 <span class="arrow">↓</span></a>
+          <a class="hero-btn hero-btn--primary" href="#info">查看项目 <span class="btn-ico">↗</span></a>
+          <a class="hero-btn hero-btn--ghost" href="#demo">观看演示 <span class="btn-ico">▶</span></a>
         </div>
+        <div class="hero-meta"><span class="meta-idx">01 / 04</span><span class="meta-txt">WHITE WING · 白盒潜入关卡 · UE 5.5</span></div>
       </div>
+      <p class="hero-foot"><span class="k-dot"></span>任务与关卡策划作品集 · 概念演示</p>
+      <a class="hero-scroll" href="#info">向下探索 <span>↓</span></a>
     </header>
 
 
@@ -69,10 +74,10 @@
           <div class="info-item"><span class="info-label">类型</span><span class="info-value">第一人称潜入暗杀 · 单机 · 潜行 + 脚本化演出</span></div>
           <div class="info-item"><span class="info-label">引擎</span><span class="info-value">Unreal Engine 5.5.4</span></div>
           <div class="info-item"><span class="info-label">形态</span><span class="info-value">Whitebox / Blockout 白盒原型（无美术资产）</span></div>
-          <div class="info-item"><span class="info-label">时长</span><span class="info-value">单次完整流程约 8–15 分钟</span></div>
-          <div class="info-item"><span class="info-label">状态</span><span class="info-value">白盒原型 · 功能验证中</span></div>
+          <div class="info-item"><span class="info-label">时长</span><span class="info-value">单次完整流程约 4–5 分钟</span></div>
+          <div class="info-item"><span class="info-label">状态</span><span class="info-value">初版白盒 · 全流程可通关</span></div>
           <div class="info-item"><span class="info-label">我的职责</span><span class="info-value">关卡设计 · 任务流程 · 演出脚本 · 引擎内实现</span></div>
-          <div class="info-item"><span class="info-label">关卡资产</span><span class="info-value">主关卡 + 2 个子关卡（流送）</span></div>
+          <div class="info-item"><span class="info-label">关卡资产</span><span class="info-value">主关卡 + 2 个流送子关卡（Level Streaming）</span></div>
         </div>
       </div>
     </section>
@@ -82,10 +87,13 @@
       <div class="container">
         <p class="sec-no">02</p>
         <h2 class="sec-title">关卡演示</h2>
-        <div class="demo-placeholder">
-          <span class="demo-play">▶</span>
-          <p>白盒流程录屏待上传 —— 可先看下方的关卡结构与演出分镜，完整流程约 8–15 分钟</p>
+        <div class="demo-video">
+          <video controls preload="metadata" playsinline poster="assets/videos/level-first-poster.jpg">
+            <source src="assets/videos/level-first.mp4" type="video/mp4" />
+            你的浏览器不支持 video 标签。
+          </video>
         </div>
+        <p class="demo-caption">完整流程录屏 · 约 4 分钟 · 白盒阶段（无美术资产）· 已裁掉录制黑边</p>
         <div class="project-list">
           <a class="project-row" href="#l0"><span class="pr-idx">L0</span><span class="pr-name">屋顶 → 一楼大堂 · 密林走廊</span><span class="pr-tag">氛围与引导</span><span class="pr-arrow">→</span></a>
           <a class="project-row" href="#l1"><span class="pr-idx">L1</span><span class="pr-name">二楼 · 开放式办公区</span><span class="pr-tag">教学：拾取 / 投掷 / 暗杀</span><span class="pr-arrow">→</span></a>
@@ -299,11 +307,14 @@
     <footer class="site-footer">
       <div class="container">
         <p>© <span id="year">2026</span> 任务与关卡策划作品集</p>
-        <p class="footer-contact">联系邮箱：【待补充】 · GitHub：【待补充】</p>
+        <p class="footer-contact">联系邮箱：<a href="mailto:2869819268@qq.com">2869819268@qq.com</a></p>
       </div>
     </footer>
 
   </main>
+
+  <!-- 返回顶部 -->
+  <button id="to-top" type="button" aria-label="返回顶部" title="返回顶部"><span aria-hidden="true">↑</span></button>
 
   <script src="app.js"></script>
 <script src="assets/scroll-reveal.js?v=3"></script>

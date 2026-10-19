@@ -414,3 +414,12 @@ body::after {
   .warp-text canvas { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ── 白盒项目补充（2026-10） ── */
+.limit-list li::before { content: "!"; color: var(--mg); }
+.story-note {
+  margin-top: 32px; padding: 18px 20px;
+  border-left: 2px solid var(--yl);
+  background: rgba(252, 238, 10, 0.045);
+  color: var(--muted); font-size: 14px;
+}

@@ -28,7 +28,9 @@
         <a class="nav-link nav-l1" href="#overview" data-target="overview"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">项目概述</span></a>
         <a class="nav-link nav-l1" href="#info" data-target="info"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">项目信息</span></a>
         <a class="nav-link nav-l1" href="#demo" data-target="demo"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">关卡演示</span></a>
+        <a class="nav-link nav-l1" href="#story" data-target="story"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">故事与演出</span></a>
         <a class="nav-link nav-l1" href="#overview-design" data-target="overview-design"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">设计总览</span></a>
+        <a class="nav-link nav-l1" href="#tech" data-target="tech"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">技术与现状</span></a>
         <a class="nav-link nav-l1" href="#blog" data-target="blog"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">随笔</span></a>
       </li>
       <li class="nav-item-group">
@@ -131,12 +133,14 @@
         <p class="sec-no">02</p>
         <h2 class="sec-title">项目信息</h2>
         <div class="info-grid">
-          <div class="info-item"><span class="info-label">类型</span><span class="info-value">【待补充】</span></div>
-          <div class="info-item"><span class="info-label">引擎</span><span class="info-value">【待补充】Unity / UE5 / Godot</span></div>
-          <div class="info-item"><span class="info-label">团队</span><span class="info-value">【待补充】人数与分工</span></div>
-          <div class="info-item"><span class="info-label">周期</span><span class="info-value">【待补充】开发时长</span></div>
-          <div class="info-item"><span class="info-label">状态</span><span class="info-value">【待补充】Demo / 上线</span></div>
-          <div class="info-item"><span class="info-label">我的职责</span><span class="info-value">【待补充】关卡 / 系统 / 叙事</span></div>
+          <div class="info-item"><span class="info-label">项目</span><span class="info-value">《The First / White Wing（白翼）》</span></div>
+          <div class="info-item"><span class="info-label">类型</span><span class="info-value">第一人称潜入暗杀 · 单机 · 潜行 + 脚本化演出</span></div>
+          <div class="info-item"><span class="info-label">引擎</span><span class="info-value">Unreal Engine 5.5.4</span></div>
+          <div class="info-item"><span class="info-label">形态</span><span class="info-value">Whitebox / Blockout 白盒原型（无美术资产）</span></div>
+          <div class="info-item"><span class="info-label">时长</span><span class="info-value">单次完整流程约 8–15 分钟</span></div>
+          <div class="info-item"><span class="info-label">状态</span><span class="info-value">白盒原型 · 功能验证中</span></div>
+          <div class="info-item"><span class="info-label">我的职责</span><span class="info-value">关卡设计 · 任务流程 · 演出脚本 · 引擎内实现</span></div>
+          <div class="info-item"><span class="info-label">关卡资产</span><span class="info-value">主关卡 + 2 个子关卡（流送）</span></div>
         </div>
       </div>
     </section>
@@ -148,31 +152,67 @@
         <h2 class="sec-title">关卡演示</h2>
         <div class="demo-placeholder">
           <span class="demo-play">▶</span>
-          <p>视频演示占位 —— 放 B 站 / 本地视频 / GIF</p>
+          <p>白盒流程录屏待上传 —— 可先看下方的关卡结构与演出分镜，完整流程约 8–15 分钟</p>
         </div>
         <div class="project-list">
-          <a class="project-row" href="#l0"><span class="pr-idx">L0</span><span class="pr-name">序章</span><span class="pr-tag">入场机制</span><span class="pr-arrow">→</span></a>
-          <a class="project-row" href="#l1"><span class="pr-idx">L1</span><span class="pr-name">第一关（待命名）</span><span class="pr-tag">核心机制教学</span><span class="pr-arrow">→</span></a>
-          <a class="project-row" href="#l2"><span class="pr-idx">L2</span><span class="pr-name">第二关（待命名）</span><span class="pr-tag">机制组合</span><span class="pr-arrow">→</span></a>
-          <a class="project-row" href="#l3"><span class="pr-idx">L3</span><span class="pr-name">第三关（待命名）</span><span class="pr-tag">机制递进与情绪峰值</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="#l0"><span class="pr-idx">L0</span><span class="pr-name">屋顶 → 一楼大堂 · 密林走廊</span><span class="pr-tag">氛围与引导</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="#l1"><span class="pr-idx">L1</span><span class="pr-name">二楼 · 开放式办公区</span><span class="pr-tag">教学：拾取 / 投掷 / 暗杀</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="#l2"><span class="pr-idx">L2</span><span class="pr-name">29 层 · 档案室</span><span class="pr-tag">考核：小 BOSS 与关键道具</span><span class="pr-arrow">→</span></a>
+          <a class="project-row" href="#l3"><span class="pr-idx">L3</span><span class="pr-name">楼顶停机坪 · 撤离</span><span class="pr-tag">演出高潮</span><span class="pr-arrow">→</span></a>
         </div>
       </div>
     </section>
 
-    <!-- 04 设计总览 -->
-    <section id="overview-design" class="section">
+    <!-- 04 故事与演出 -->
+    <section id="story" class="section">
       <div class="container">
         <p class="sec-no">04</p>
-        <h2 class="sec-title">设计总览</h2>
+        <h2 class="sec-title">故事与演出 <span class="sec-en">NARRATIVE</span></h2>
+        <div class="level-grid">
+          <div class="level-block">
+            <h3>世界观</h3>
+            <p>一座孤立海岛上的生物科技研究塔。公司在此进行<b>生长素（Growth Serum）</b>实验，试图培育可控的巨型植物。实验失控：楼内植物野蛮生长，整座塔被植被侵蚀。</p>
+            <p style="margin-top:12px">玩家是一名受雇潜入的研究员 / 特工，目标是<b>取得研究数据</b>，抢在灾难扩散前把方案带出去。</p>
+          </div>
+          <div class="level-block">
+            <h3>叙事呈现（全部已实现）</h3>
+            <ul class="highlight-list">
+              <li><b>开场</b>：黑屏白字，8 行两句话一组，10.2 秒后淡出</li>
+              <li><b>一楼大堂</b>：38 件植被 + 3 棵 11–15 米突变巨木，环境叙事</li>
+              <li><b>二楼阳台</b>：主角内心独白 + 可拾取《项目纪要·第 17 次观测》</li>
+              <li><b>三楼楼梯口</b>：队友无线电 + 镜头推近门</li>
+              <li><b>取得数据</b>：队友无线电 + 全区警报启动</li>
+              <li><b>楼顶</b>：转视角 → 连环 21 次爆炸 → 直升机升空 → 黑屏白字收束</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flow-player" style="margin-top:36px">
+          <span class="fp-label">撤离演出分镜</span>
+          <div class="fp-track">
+            <span class="fp-seg" style="width:22%">转视角看塔楼</span>
+            <span class="fp-seg" style="width:34%">连环 21 次爆炸</span>
+            <span class="fp-seg" style="width:24%">随直升机升空</span>
+            <span class="fp-seg" style="width:20%">黑屏白字收束</span>
+          </div>
+          <p class="fp-note">升空阶段<b>视角保持自由</b>——玩家可以回头看着这座塔在身后崩塌，而不是被切进过场。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 设计总览 -->
+    <section id="overview-design" class="section">
+      <div class="container">
+        <p class="sec-no">05</p>
+        <h2 class="sec-title">设计总览 <span class="sec-en">OVERVIEW</span></h2>
         <div class="overview-grid">
           <article class="ov-card">
             <h3>核心机制</h3>
-            <p>【待补充】一句话讲清玩家的核心动作与规则。</p>
-            <div class="ov-diagram mech-diagram"><span>输入</span><span>→</span><span>规则</span><span>→</span><span>反馈</span></div>
+            <p><b>观察 → 选路 → 诱敌 → 暗杀</b>。守卫有贴地可视化的视野扇形；玩家可绕后、贴墙、蹲进通风管，或用投掷物把守卫引开。</p>
+            <div class="ov-diagram mech-diagram"><span>观察</span><span>→</span><span>选路</span><span>→</span><span>诱敌</span><span>→</span><span>暗杀</span></div>
           </article>
           <article class="ov-card">
             <h3>空间动线</h3>
-            <p>【待补充】玩家在关卡中的移动路径与关键节点。</p>
+            <p>屋顶起点 → 一楼大堂（密林走廊）→ 电梯 / 楼梯竖井 → 二楼办公区 → 29 层档案室 → 全区警戒 → 楼顶停机坪。垂直交通贯穿全塔。</p>
             <svg class="ov-diagram flow-svg" viewBox="0 0 300 80" aria-hidden="true">
               <path d="M10 40 H80 L100 20 H160 L180 60 H250 L270 40 H290" fill="none" stroke="#fafafa" stroke-width="2"/>
               <circle cx="10" cy="40" r="4" fill="#fafafa"/><circle cx="290" cy="40" r="4" fill="#fafafa"/>
@@ -180,15 +220,15 @@
           </article>
           <article class="ov-card">
             <h3>情绪曲线</h3>
-            <p>【待补充】紧张/好奇/释然等情绪随进度的变化。</p>
+            <p>潜入的克制 → 教学区建立信心 → 档案室小 BOSS 的压迫 → 取物后警报爆发 → 楼顶爆炸峰值 → 黑屏余韵。</p>
             <svg class="ov-diagram curve-svg" viewBox="0 0 300 90" aria-hidden="true">
               <path d="M10 70 C40 70 60 60 85 45 S130 20 160 30 S220 70 290 35" fill="none" stroke="#fafafa" stroke-width="2"/>
             </svg>
           </article>
           <article class="ov-card">
             <h3>机制递进</h3>
-            <p>【待补充】机制如何从入门到组合再到颠覆。</p>
-            <div class="ov-diagram prog-diagram"><span>L0 了解</span><span>→</span><span>L1 掌握</span><span>→</span><span>L2 组合</span><span>→</span><span>L3 突破</span></div>
+            <p>先让玩家「看见」守卫的视野，再教「蹲伏与绕行」，然后给「投掷诱敌」，最后要求「组合使用」——每一层只加一个变量。</p>
+            <div class="ov-diagram prog-diagram"><span>观察</span><span>→</span><span>蹲伏</span><span>→</span><span>诱敌</span><span>→</span><span>组合</span></div>
           </article>
         </div>
       </div>
@@ -198,18 +238,18 @@
     <section id="l0" class="section level">
       <div class="container">
         <p class="sec-no">L0</p>
-        <h2 class="sec-title">序章 <span class="sec-en">PROLOGUE</span></h2>
+        <h2 class="sec-title">序章 · 屋顶与大堂 <span class="sec-en">PROLOGUE</span></h2>
         <div class="level-grid">
           <div class="level-block">
             <h3>入场机制</h3>
-            <p>【待补充】玩家第一次接触的核心动作；如何在一分钟内建立“我能做到”的信心。</p>
+            <p>玩家在屋顶出生，可俯瞰整座塔。开场以黑屏白字交代任务与动机（8 行、10.2 秒后淡出），随后进入一楼大堂——巨树从中庭长出，直接暗示“野蛮生长”。</p>
           </div>
           <div class="level-block">
             <h3>设计亮点</h3>
             <ul class="highlight-list">
-              <li>【待补充】亮点 1</li>
-              <li>【待补充】亮点 2</li>
-              <li>【待补充】亮点 3</li>
+              <li><b>用环境讲故事</b>：38 件植被 + 3 棵 11–15 米突变巨木，不靠台词交代失控</li>
+              <li><b>先给全景，再收窄视线</b>：屋顶俯瞰建立空间感，大堂走廊把视线收回，引导玩家走向电梯</li>
+              <li><b>开场克制</b>：只给文字与氛围，不急着教操作</li>
             </ul>
           </div>
         </div>
@@ -220,16 +260,16 @@
     <section id="l1" class="section level">
       <div class="container">
         <p class="sec-no">L1</p>
-        <h2 class="sec-title">第一关 <span class="sec-en">LEVEL 1</span></h2>
+        <h2 class="sec-title">第一关 · 二楼办公区 <span class="sec-en">LEVEL 1</span></h2>
         <div class="flow-player">
-          <span class="fp-label">流线播放器</span>
+          <span class="fp-label">流线</span>
           <div class="fp-track">
-            <span class="fp-seg" style="width:22%">引入</span>
-            <span class="fp-seg" style="width:34%">教学</span>
-            <span class="fp-seg" style="width:26%">挑战</span>
-            <span class="fp-seg" style="width:18%">收束</span>
+            <span class="fp-seg" style="width:24%">进入办公区</span>
+            <span class="fp-seg" style="width:34%">拾取 / 投掷 / 暗杀教学</span>
+            <span class="fp-seg" style="width:24%">通风管与绕行</span>
+            <span class="fp-seg" style="width:18%">阳台笔记</span>
           </div>
-          <p class="fp-note">【待补充】各段落的关键事件与设计意图（时间轴）。</p>
+          <p class="fp-note">教学区用提示牌逐个引入「拾取 → 投掷 → 暗杀」；通风管道只能蹲着通过，把「蹲伏」变成一次不可回避的操作。</p>
         </div>
         <div class="level-grid">
           <div class="level-block">
@@ -237,14 +277,14 @@
             <svg class="level-curve" viewBox="0 0 320 100" aria-hidden="true">
               <path d="M10 80 C60 70 90 40 140 45 S210 25 250 50 S300 20 310 15" fill="none" stroke="#fafafa" stroke-width="2"/>
             </svg>
-            <p>【待补充】曲线说明：哪个节点最紧张、哪个节点最释然。</p>
+            <p>低压力、高容错：玩家在这里第一次主动「制造声音」，建立「我能控制守卫」的信心。</p>
           </div>
           <div class="level-block">
             <h3>设计亮点</h3>
             <ul class="highlight-list">
-              <li>【待补充】亮点 1</li>
-              <li>【待补充】亮点 2</li>
-              <li>【待补充】亮点 3</li>
+              <li><b>一个区域只教一件事</b>：拾取、投掷、暗杀分点教学，不堆叠</li>
+              <li><b>蹲伏不是按键，是规则</b>：通风管只能蹲行，逼玩家记住姿态</li>
+              <li><b>叙事埋在可交互物里</b>：阳台纸条《项目纪要·第 17 次观测》补完生长素失控的因果</li>
             </ul>
           </div>
         </div>
@@ -255,16 +295,16 @@
     <section id="l2" class="section level">
       <div class="container">
         <p class="sec-no">L2</p>
-        <h2 class="sec-title">第二关 <span class="sec-en">LEVEL 2</span></h2>
+        <h2 class="sec-title">第二关 · 29 层档案室 <span class="sec-en">LEVEL 2</span></h2>
         <div class="flow-player">
-          <span class="fp-label">流线播放器</span>
+          <span class="fp-label">流线</span>
           <div class="fp-track">
-            <span class="fp-seg" style="width:20%">重述</span>
-            <span class="fp-seg" style="width:30%">组合</span>
-            <span class="fp-seg" style="width:32%">高压</span>
-            <span class="fp-seg" style="width:18%">喘息</span>
+            <span class="fp-seg" style="width:22%">楼梯口推镜</span>
+            <span class="fp-seg" style="width:30%">避开小 BOSS 视线</span>
+            <span class="fp-seg" style="width:28%">取得研究数据</span>
+            <span class="fp-seg" style="width:20%">全区警报</span>
           </div>
-          <p class="fp-note">【待补充】各段落的关键事件与设计意图（时间轴）。</p>
+          <p class="fp-note">档案室内有一名小 BOSS 级敌人（黄色自发光），每 3 秒在两个朝向之间扫视——玩家必须在扫视的间隙里移动。</p>
         </div>
         <div class="level-grid">
           <div class="level-block">
@@ -272,14 +312,14 @@
             <svg class="level-curve" viewBox="0 0 320 100" aria-hidden="true">
               <path d="M10 70 C50 65 70 30 110 40 S170 20 200 55 S260 75 310 20" fill="none" stroke="#fafafa" stroke-width="2"/>
             </svg>
-            <p>【待补充】曲线说明。</p>
+            <p>全流程压力最高的一段：视野被扫视节奏切碎，容错空间最小。</p>
           </div>
           <div class="level-block">
             <h3>设计亮点</h3>
             <ul class="highlight-list">
-              <li>【待补充】亮点 1</li>
-              <li>【待补充】亮点 2</li>
-              <li>【待补充】亮点 3</li>
+              <li><b>用节奏制造压力</b>：3 秒一次的扫视，把「等待时机」变成可读的节拍</li>
+              <li><b>颜色即危险等级</b>：红=普通、紫=高危、黄=小 BOSS，玩家不用读字就能判断</li>
+              <li><b>取物即转折</b>：拿到数据的同时触发全区警报，把「潜入」切成「撤离」</li>
             </ul>
           </div>
         </div>
@@ -290,16 +330,16 @@
     <section id="l3" class="section level">
       <div class="container">
         <p class="sec-no">L3</p>
-        <h2 class="sec-title">第三关 <span class="sec-en">LEVEL 3</span></h2>
+        <h2 class="sec-title">第三关 · 楼顶撤离 <span class="sec-en">LEVEL 3</span></h2>
         <div class="flow-player">
-          <span class="fp-label">流线播放器</span>
+          <span class="fp-label">流线</span>
           <div class="fp-track">
-            <span class="fp-seg" style="width:16%">收束</span>
-            <span class="fp-seg" style="width:28%">总攻</span>
-            <span class="fp-seg" style="width:36%">峰值</span>
-            <span class="fp-seg" style="width:20%">余韵</span>
+            <span class="fp-seg" style="width:18%">逃离塔内</span>
+            <span class="fp-seg" style="width:26%">楼顶连廊</span>
+            <span class="fp-seg" style="width:34%">连环爆炸</span>
+            <span class="fp-seg" style="width:22%">直升机升空</span>
           </div>
-          <p class="fp-note">【待补充】各段落的关键事件与设计意图（时间轴）。</p>
+          <p class="fp-note">撤离阶段沿线触发连环爆炸；升空时视角保持自由，玩家可以回头看着整座塔崩塌。</p>
         </div>
         <div class="level-grid">
           <div class="level-block">
@@ -307,24 +347,67 @@
             <svg class="level-curve" viewBox="0 0 320 100" aria-hidden="true">
               <path d="M10 80 C60 70 80 50 110 55 S180 60 210 35 S280 10 310 15" fill="none" stroke="#fafafa" stroke-width="2"/>
             </svg>
-            <p>【待补充】曲线说明。</p>
+            <p>从「逃命」的紧张一路推到爆炸的峰值，最后用黑屏白字收束。</p>
           </div>
           <div class="level-block">
             <h3>设计亮点</h3>
             <ul class="highlight-list">
-              <li>【待补充】亮点 1</li>
-              <li>【待补充】亮点 2</li>
-              <li>【待补充】亮点 3</li>
+              <li><b>演出与操作同频</b>：爆炸沿玩家路径依次触发，不是播片</li>
+              <li><b>不夺走控制权</b>：升空阶段视角自由，情绪由玩家自己看出来</li>
+              <li><b>收束留白</b>：黑屏白字「不知道能不能赶得上阻止这场灾难」，把结局交给玩家想象</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 05 随笔 -->
+    <!-- 06 技术与现状 -->
+    <section id="tech" class="section">
+      <div class="container">
+        <p class="sec-no">06</p>
+        <h2 class="sec-title">技术与现状 <span class="sec-en">TECH &amp; STATUS</span></h2>
+        <div class="overview-grid">
+          <article class="ov-card">
+            <h3>C++ 主导</h3>
+            <p>任务流程、交互、AI 感知、演出与 HUD 全部由一个 Director 类驱动。</p>
+          </article>
+          <article class="ov-card">
+            <h3>标签驱动</h3>
+            <p>门、梯子、敌人、可读物、道具全部用 Actor Tag 识别，<b>改布局不需要改代码</b>。</p>
+          </article>
+          <article class="ov-card">
+            <h3>自写演出序列</h3>
+            <p>基于「状态 + 时间」的序列（不依赖 Sequencer），可精确控制镜头融合、锁移动、黑屏与爆炸节奏。</p>
+          </article>
+          <article class="ov-card">
+            <h3>Canvas HUD</h3>
+            <p>直接绘制文字与色块，无 UMG 资产；改字号只需改数字。</p>
+          </article>
+        </div>
+        <div class="level-grid">
+          <div class="level-block">
+            <h3>白盒方法论</h3>
+            <p>全部几何体为引擎基础形体与方块：灰色为主，<b>青色=可交互、红色=危险、金色=关键道具、绿色=植被</b>。先用白盒验证空间、节奏与信息可读性，再谈美术。</p>
+          </div>
+          <div class="level-block">
+            <h3>已知限制（如实呈现）</h3>
+            <ul class="highlight-list limit-list">
+              <li>敌人没有寻路（无 NavMesh），追击为直线移动，会被墙卡住</li>
+              <li>敌人为静态网格拼装，没有骨骼与走路动画</li>
+              <li>敌人当前不主动追击（功能已实现，按需求关闭）</li>
+              <li>阅读卡背景是「压暗」而非真正模糊（Canvas 无法模糊）</li>
+              <li>投掷 / 蹲伏 / F 键部分逻辑尚未经过真人完整验证</li>
+            </ul>
+          </div>
+        </div>
+        <p class="story-note">下一步：补敌人寻路与动画、完善 29 层档案室之后的组合层、录制完整的流程演示。</p>
+      </div>
+    </section>
+
+    <!-- 07 随笔 -->
     <section id="blog" class="section">
       <div class="container">
-        <p class="sec-no">05</p>
+        <p class="sec-no">07</p>
         <h2 class="sec-title">随笔</h2>
         <div class="project-list">
           <a class="project-row" href="blog/ai-gamedesign.html"><span class="pr-idx">B1</span><span class="pr-name">AI 时代，游戏策划的技能树应该怎么点</span><span class="pr-tag">行业观察</span><span class="pr-arrow">→</span></a>

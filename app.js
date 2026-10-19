@@ -116,3 +116,13 @@
     window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   });
 })();
+
+// ── 进入页面默认回到顶部（除非 URL 带锚点） ──
+(function () {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (location.hash) return;
+  const toTop = () => window.scrollTo(0, 0);
+  toTop();
+  window.addEventListener("load", toTop);
+  window.addEventListener("pageshow", toTop);
+})();

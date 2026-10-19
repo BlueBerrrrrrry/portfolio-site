@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="游戏系统策划拆解作品集 · 星穹铁道背包 / 异环商业化 / 原神版本活动 · Cyberpunk 风格演示" />
+  <meta name="description" content="任务与关卡策划作品集 · 第一人称潜入关卡白盒（UE5）· 空间布局 / 引导节奏 / 演出落地" />
   <meta name="theme-color" content="#0a0a10" />
-  <title>系统策划拆解作品集 | Game System Design</title>
+  <title>任务与关卡策划作品集 | Quest &amp; Level Design</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕹️</text></svg>" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -25,19 +25,16 @@
   <nav class="side-nav" id="side-nav" aria-label="章节导航">
     <ul>
       <li class="nav-item-group">
-        <a class="nav-link nav-l1" href="#overview" data-target="overview"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">项目概述</span></a>
         <a class="nav-link nav-l1" href="#info" data-target="info"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">项目信息</span></a>
         <a class="nav-link nav-l1" href="#demo" data-target="demo"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">关卡演示</span></a>
         <a class="nav-link nav-l1" href="#story" data-target="story"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">故事与演出</span></a>
         <a class="nav-link nav-l1" href="#overview-design" data-target="overview-design"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">设计总览</span></a>
-        <a class="nav-link nav-l1" href="#tech" data-target="tech"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">技术与现状</span></a>
-        <a class="nav-link nav-l1" href="#blog" data-target="blog"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">随笔</span></a>
       </li>
       <li class="nav-item-group">
-        <a class="nav-link nav-l2" href="#l0" data-target="l0"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L0 序章</span></a>
-        <a class="nav-link nav-l2" href="#l1" data-target="l1"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L1 第一关</span></a>
-        <a class="nav-link nav-l2" href="#l2" data-target="l2"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L2 第二关</span></a>
-        <a class="nav-link nav-l2" href="#l3" data-target="l3"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L3 第三关</span></a>
+        <a class="nav-link nav-l2" href="#l0" data-target="l0"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L0 屋顶 · 大堂</span></a>
+        <a class="nav-link nav-l2" href="#l1" data-target="l1"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L1 二楼办公区</span></a>
+        <a class="nav-link nav-l2" href="#l2" data-target="l2"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L2 29 层档案室</span></a>
+        <a class="nav-link nav-l2" href="#l3" data-target="l3"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L3 楼顶撤离</span></a>
       </li>
     </ul>
   </nav>
@@ -50,87 +47,22 @@
         <span>关</span><span>卡</span><span>设</span><span>计</span><span>师</span>
       </div>
       <div class="hero-content">
-        <p class="hero-kicker">GAME SYSTEM DESIGNER · TEARDOWN PORTFOLIO</p>
-        <div class="warp-text" id="hero-warp" role="img" aria-label="系统策划拆解作品集" data-warp-text="系统策划拆解作品集" data-warp-color="#fcee0a">
-          <h1 class="hero-title warp-fallback">系统策划拆解作品集</h1>
+        <p class="hero-kicker">QUEST &amp; LEVEL DESIGNER · WHITEBOX PORTFOLIO</p>
+        <div class="warp-text" id="hero-warp" role="img" aria-label="任务与关卡策划作品集" data-warp-text="任务与关卡策划作品集" data-warp-color="#fcee0a">
+          <h1 class="hero-title warp-fallback">任务与关卡策划作品集</h1>
         </div>
-        <p class="hero-sub">以系统策划视角拆解商业游戏设计：星穹铁道背包 · 异环商业化 · 原神版本活动。</p>
+        <p class="hero-sub">第一人称潜入关卡白盒 · 从空间布局、引导节奏到演出落地 · Unreal Engine 5</p>
         <div class="hero-cta">
-          <a class="hero-link" href="#overview">查看项目 <span class="arrow">↓</span></a>
+          <a class="hero-link" href="#info">查看项目 <span class="arrow">↓</span></a>
         </div>
       </div>
     </header>
 
-    <!-- 01 拆解作品集（上：视频展示 + 简介；下：拆解案展示） -->
-    <section id="overview" class="section">
-      <div class="container">
-        <p class="sec-no">01</p>
-        <h2 class="sec-title" data-reveal="chars">游戏拆解作品集</h2>
 
-        <!-- 上半：视频展示 + 简介 -->
-        <div class="td-top">
-          <div class="td-video-col">
-            <div class="td-player">
-              <video id="td-video" controls preload="metadata" playsinline>
-                <source src="assets/videos/td-hsr.mp4" type="video/mp4" />
-              </video>
-              <div class="td-player-empty" id="td-video-empty">
-                <span class="td-play-icon">▶</span>
-                <p>视频占位 —— 将拆解讲解视频放入 <code>assets/videos/</code><br/>（td-hsr.mp4 / td-ynn.mp4 / td-genshin.mp4）</p>
-              </div>
-            </div>
-            <div class="td-playlist" role="tablist" aria-label="拆解视频列表">
-              <button class="td-pl-item is-active" data-video="assets/videos/td-hsr.mp4">
-                <span class="td-pl-idx">V1</span><span>星穹铁道 · 背包系统拆解</span>
-              </button>
-              <button class="td-pl-item" data-video="assets/videos/td-ynn.mp4">
-                <span class="td-pl-idx">V2</span><span>异环 · 商业化拆解</span>
-              </button>
-              <button class="td-pl-item" data-video="assets/videos/td-genshin.mp4">
-                <span class="td-pl-idx">V3</span><span>原神 7.0 · 版本活动拆解</span>
-              </button>
-            </div>
-          </div>
-          <div class="td-intro">
-            <h3>这是我的拆解方法论</h3>
-            <p>以<b>「目的 → 框架 → 契约 → 落地 → 迭代」</b>为主线拆解系统设计：先还原设计目的与玩家路径，再抽离核心规则与数值关系，最后回看版本迭代验证设计判断。</p>
-            <ul>
-              <li><b>玩法拆解</b>：系统循环 / 状态流转 / 时间门控 / 奖励结构</li>
-              <li><b>商业化拆解</b>：付费结构 / 生态分布 / 抽卡与交易经济</li>
-              <li><b>版本复盘</b>：上线后迭代动因（数据 / 反馈 / 节奏）</li>
-            </ul>
-            <p class="muted">三份作品均可在线查看完整拆解案（下方卡片），讲解视频正在录制中。</p>
-          </div>
-        </div>
-
-        <!-- 下半：拆解案（Word 式目录 → 点击展开） -->
-        <div class="td-toc-wrap">
-          <div class="td-toc-label" data-reveal="chars">拆解案目录 —— 点击任意一份立即展开阅读</div>
-          <ol class="td-toc">
-            <li class="td-toc-item" id="td-doc-1" data-reveal="block" aria-expanded="false">
-              <span class="td-toc-idx">1、</span>
-              <span class="td-toc-title">崩坏：星穹铁道 · 背包系统拆解</span>
-              <span class="td-toc-hint">五层反推法 · 系统循环 × 数值关系 × 容器经济学</span>
-            </li>
-            <li class="td-toc-item" id="td-doc-2" data-reveal="block" aria-expanded="false">
-              <span class="td-toc-idx">2、</span>
-              <span class="td-toc-title">异环 · 商业化与付费结构拆解</span>
-              <span class="td-toc-hint">首日流水破亿 · 角色浅抽 × 都市消费 · 五款横评</span>
-            </li>
-            <li class="td-toc-item" id="td-doc-3" data-reveal="block" aria-expanded="false">
-              <span class="td-toc-idx">3、</span>
-              <span class="td-toc-title">原神 7.0 · 版本活动系统拆解</span>
-              <span class="td-toc-hint">活动日历 × 6 类模板 × 错峰节奏 × 三层留存</span>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 项目信息 -->
+    <!-- 01 项目信息 -->
     <section id="info" class="section">
       <div class="container">
-        <p class="sec-no">02</p>
+        <p class="sec-no">01</p>
         <h2 class="sec-title">项目信息</h2>
         <div class="info-grid">
           <div class="info-item"><span class="info-label">项目</span><span class="info-value">《The First / White Wing（白翼）》</span></div>
@@ -145,10 +77,10 @@
       </div>
     </section>
 
-    <!-- 03 关卡演示 -->
+    <!-- 02 关卡演示 -->
     <section id="demo" class="section">
       <div class="container">
-        <p class="sec-no">03</p>
+        <p class="sec-no">02</p>
         <h2 class="sec-title">关卡演示</h2>
         <div class="demo-placeholder">
           <span class="demo-play">▶</span>
@@ -163,10 +95,10 @@
       </div>
     </section>
 
-    <!-- 04 故事与演出 -->
+    <!-- 03 故事与演出 -->
     <section id="story" class="section">
       <div class="container">
-        <p class="sec-no">04</p>
+        <p class="sec-no">03</p>
         <h2 class="sec-title">故事与演出 <span class="sec-en">NARRATIVE</span></h2>
         <div class="level-grid">
           <div class="level-block">
@@ -199,10 +131,10 @@
       </div>
     </section>
 
-    <!-- 05 设计总览 -->
+    <!-- 04 设计总览 -->
     <section id="overview-design" class="section">
       <div class="container">
-        <p class="sec-no">05</p>
+        <p class="sec-no">04</p>
         <h2 class="sec-title">设计总览 <span class="sec-en">OVERVIEW</span></h2>
         <div class="overview-grid">
           <article class="ov-card">
@@ -361,66 +293,12 @@
       </div>
     </section>
 
-    <!-- 06 技术与现状 -->
-    <section id="tech" class="section">
-      <div class="container">
-        <p class="sec-no">06</p>
-        <h2 class="sec-title">技术与现状 <span class="sec-en">TECH &amp; STATUS</span></h2>
-        <div class="overview-grid">
-          <article class="ov-card">
-            <h3>C++ 主导</h3>
-            <p>任务流程、交互、AI 感知、演出与 HUD 全部由一个 Director 类驱动。</p>
-          </article>
-          <article class="ov-card">
-            <h3>标签驱动</h3>
-            <p>门、梯子、敌人、可读物、道具全部用 Actor Tag 识别，<b>改布局不需要改代码</b>。</p>
-          </article>
-          <article class="ov-card">
-            <h3>自写演出序列</h3>
-            <p>基于「状态 + 时间」的序列（不依赖 Sequencer），可精确控制镜头融合、锁移动、黑屏与爆炸节奏。</p>
-          </article>
-          <article class="ov-card">
-            <h3>Canvas HUD</h3>
-            <p>直接绘制文字与色块，无 UMG 资产；改字号只需改数字。</p>
-          </article>
-        </div>
-        <div class="level-grid">
-          <div class="level-block">
-            <h3>白盒方法论</h3>
-            <p>全部几何体为引擎基础形体与方块：灰色为主，<b>青色=可交互、红色=危险、金色=关键道具、绿色=植被</b>。先用白盒验证空间、节奏与信息可读性，再谈美术。</p>
-          </div>
-          <div class="level-block">
-            <h3>已知限制（如实呈现）</h3>
-            <ul class="highlight-list limit-list">
-              <li>敌人没有寻路（无 NavMesh），追击为直线移动，会被墙卡住</li>
-              <li>敌人为静态网格拼装，没有骨骼与走路动画</li>
-              <li>敌人当前不主动追击（功能已实现，按需求关闭）</li>
-              <li>阅读卡背景是「压暗」而非真正模糊（Canvas 无法模糊）</li>
-              <li>投掷 / 蹲伏 / F 键部分逻辑尚未经过真人完整验证</li>
-            </ul>
-          </div>
-        </div>
-        <p class="story-note">下一步：补敌人寻路与动画、完善 29 层档案室之后的组合层、录制完整的流程演示。</p>
-      </div>
-    </section>
 
-    <!-- 07 随笔 -->
-    <section id="blog" class="section">
-      <div class="container">
-        <p class="sec-no">07</p>
-        <h2 class="sec-title">随笔</h2>
-        <div class="project-list">
-          <a class="project-row" href="blog/ai-gamedesign.html"><span class="pr-idx">B1</span><span class="pr-name">AI 时代，游戏策划的技能树应该怎么点</span><span class="pr-tag">行业观察</span><span class="pr-arrow">→</span></a>
-          <a class="project-row" href="blog/cocoon-devlog.html"><span class="pr-idx">B2</span><span class="pr-name">「茧中之梦」开发手记：把梦境做成玩法</span><span class="pr-tag">开发记录</span><span class="pr-arrow">→</span></a>
-          <a class="project-row" href="blog/interview-notes.html"><span class="pr-idx">B3</span><span class="pr-name">校招求职笔记：从简历到面试的复盘</span><span class="pr-tag">求职复盘</span><span class="pr-arrow">→</span></a>
-        </div>
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer class="site-footer">
       <div class="container">
-        <p>© <span id="year">2026</span> 关卡设计师作品集 · 占位版</p>
+        <p>© <span id="year">2026</span> 任务与关卡策划作品集</p>
         <p class="footer-contact">联系邮箱：【待补充】 · GitHub：【待补充】</p>
       </div>
     </footer>
@@ -428,8 +306,6 @@
   </main>
 
   <script src="app.js"></script>
-<script src="assets/teardowns.js"></script>
-<script src="assets/td-reader.js"></script>
 <script src="assets/scroll-reveal.js?v=3"></script>
 <script type="module" src="assets/warp-text.js"></script>
 </body>

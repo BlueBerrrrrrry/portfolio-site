@@ -22,18 +22,26 @@
 (function () {
   const cursor = document.getElementById("cursor");
   if (!cursor || window.matchMedia("(hover: none)").matches) return;
-  let x = 0, y = 0, cx = 0, cy = 0;
-  window.addEventListener("mousemove", (e) => {
-    x = e.clientX; y = e.clientY;
-    cursor.classList.add("ready");
-  });
-  (function loop() {
+  let x = 0, y = 0, cx = 0, cy = 0, running = false;
+  // 光标静止后停止 rAF：避免整页常驻 60fps（视频播放时会抢主线程/合成资源）
+  const loop = () => {
     cx += (x - cx) * 0.18;
     cy += (y - cy) * 0.18;
     cursor.style.left = cx + "px";
     cursor.style.top = cy + "px";
+    if (Math.abs(x - cx) < 0.4 && Math.abs(y - cy) < 0.4) {
+      cx = x; cy = y;
+      cursor.style.left = cx + "px"; cursor.style.top = cy + "px";
+      running = false;
+      return;
+    }
     requestAnimationFrame(loop);
-  })();
+  };
+  window.addEventListener("mousemove", (e) => {
+    x = e.clientX; y = e.clientY;
+    cursor.classList.add("ready");
+    if (!running) { running = true; requestAnimationFrame(loop); }
+  });
   const hoverSel = "a, button, .project-row, .fp-seg, .hero-link";
   document.addEventListener("mouseover", (e) => {
     if (e.target.closest && e.target.closest(hoverSel)) cursor.classList.add("hovering");

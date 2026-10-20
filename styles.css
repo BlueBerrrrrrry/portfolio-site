@@ -574,3 +574,9 @@ body::after {
 /* Hero 标题：让故障字画布的底色与背景融合（黑色部分透出背景） */
 .hero .warp-text { isolation: auto; }
 .hero .warp-text canvas { mix-blend-mode: screen; }
+
+/* ── 视频播放优化 ── */
+#to-top { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(10, 10, 16, 0.94); }
+.demo-caption a { color: var(--cy); text-decoration: none; border-bottom: 1px solid rgba(0, 240, 255, 0.35); }
+.demo-caption a:hover { color: var(--yl); border-bottom-color: var(--yl); }
+.demo-video video { background: #000; }

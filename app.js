@@ -81,17 +81,20 @@
   if (y) y.textContent = String(new Date().getFullYear());
 })();
 
-// ── 跨页面锚点兜底：带 #hash 进入时，load 后立即精确定位 ──
-// （Chromium 会等布局完全稳定才做自动锚点滚动，期间 scrollRestoration=auto 还会拉回顶部）
+// ── 进入页面一律回到顶部 ──
+// 浏览器的滚动位置恢复 + URL 里残留的 #锚点，都会让人一进来就停在某一节；
+// 作品集以首屏为准，所以这里清掉锚点并多次校正到顶部。
 (function () {
-  if (!location.hash) return;
-  const id = decodeURIComponent(location.hash.slice(1));
-  const target = document.getElementById(id);
-  if (!target) return;
-  history.scrollRestoration = "manual";
-  const go = () => target.scrollIntoView({ behavior: "instant", block: "start" });
-  if (document.readyState === "complete") setTimeout(go, 350);
-  else window.addEventListener("load", () => setTimeout(go, 350));
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (location.hash) {
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+  }
+  const toTop = () => window.scrollTo(0, 0);
+  toTop();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", toTop);
+  window.addEventListener("load", toTop);
+  window.addEventListener("pageshow", toTop);
+  [120, 400, 900].forEach((t) => setTimeout(toTop, t));
 })();
 
 // ── 博客页主题按钮（浅色占位：仅切换属性，样式仍为深色主题）──
@@ -117,12 +120,3 @@
   });
 })();
 
-// ── 进入页面默认回到顶部（除非 URL 带锚点） ──
-(function () {
-  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-  if (location.hash) return;
-  const toTop = () => window.scrollTo(0, 0);
-  toTop();
-  window.addEventListener("load", toTop);
-  window.addEventListener("pageshow", toTop);
-})();

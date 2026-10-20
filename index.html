@@ -29,7 +29,6 @@
         <a class="nav-link nav-l1" href="#demo" data-target="demo"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">关卡演示</span></a>
         <a class="nav-link nav-l1" href="#story" data-target="story"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">故事与演出</span></a>
         <a class="nav-link nav-l1" href="#overview-design" data-target="overview-design"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">设计总览</span></a>
-        <a class="nav-link nav-l1" href="#tech" data-target="tech"><span class="nav-icon-wrap"><span class="nav-dot"></span></span><span class="nav-label">关卡实现</span></a>
       </li>
       <li class="nav-item-group">
         <a class="nav-link nav-l2" href="#l0" data-target="l0"><span class="nav-icon-wrap"><span class="nav-line"></span></span><span class="nav-label">L0 屋顶 · 大堂</span></a>
@@ -304,74 +303,6 @@
 
 
 
-    <!-- 05 关卡实现 -->
-    <section id="tech" class="section">
-      <div class="container">
-        <p class="sec-no">05</p>
-        <h2 class="sec-title">关卡实现 <span class="sec-en">TECH NOTES</span></h2>
-        <p class="sec-body muted">这个项目刻意把“关卡规则”从引擎细节里抽出来：策划改数值、改标签、改时间轴，就能改玩法，不必动 C++ 结构。</p>
-        <div class="overview-grid">
-          <article class="ov-card">
-            <h3>三个核心类</h3>
-            <p><b>TowerMissionDirector</b> 管任务流程、交互、演出、HUD 与 BGM；<b>HotelPrototypeRules</b> 管潜行规则（拾取 / 投掷 / 暗杀 / 噪声 / 视野 / 门）；<b>TowerMissionHUD</b> 负责屏幕上每一行字。</p>
-          </article>
-          <article class="ov-card">
-            <h3>标签驱动</h3>
-            <p>门、敌人、可读物、道具全部用 Actor Tag 识别，<b>改布局不用改代码</b>。代价是复制时容易“连体”：敌人要成对复制身体与头，并换成独立组标签，否则一次暗杀整组消失。</p>
-          </article>
-          <article class="ov-card">
-            <h3>交互判定</h3>
-            <p>F 键的目标 = 距离 ≤ <b>180cm</b> + 一条 <b>Visibility 射线</b>不被遮挡。所以任何“无碰撞”的敌人或道具都会让 F 直接失效。</p>
-          </article>
-          <article class="ov-card">
-            <h3>噪声链路</h3>
-            <p>投掷 → 落地 <b>ReportNoise</b> → 守卫在 <b>1500cm</b> 内、高度差 &lt;100、视线无遮挡 → 进入调查状态。朝墙丢会被判“空间不足”，道具根本不会飞出去。</p>
-          </article>
-        </div>
-        <div class="level-grid">
-          <div class="level-block">
-            <h3>演出：状态 + 时间</h3>
-            <p>不用 Sequencer，用「状态 + 时间」的自写序列——<b>改演出节奏 = 改几个秒数</b>。</p>
-            <ul class="highlight-list">
-              <li>0s：进入停机坪 240cm，锁定移动与视角</li>
-              <li>0–1.2s：强制转视角看塔楼</li>
-              <li><b>1.5s</b>：起飞 + 隐藏机体 + 连环爆炸 + 交还视角</li>
-              <li>1.5–9.8s：21 次爆炸（7 点 × 3 轮，间隔 0.36s）</li>
-              <li>9.8s 后：收尾 → 黑屏白字</li>
-            </ul>
-          </div>
-          <div class="level-block">
-            <h3>七个踩过的坑</h3>
-            <ul class="highlight-list limit-list">
-              <li>同名 Actor 很多，改件不要按名字批量操作</li>
-              <li>Live Coding 不能加成员变量 → 文件级 static + BeginPlay 重置</li>
-              <li>PIE 是开局快照，改完必须重开 Play</li>
-              <li>交互靠 Visibility 射线，无碰撞 = F 失效</li>
-              <li>跨子关卡不能挂接，失败不报错，只表现为“不跟随”</li>
-              <li>中文名文件可能崩编辑器，先改成英文名</li>
-              <li>同标签复制会“连体”，门会一起开关</li>
-            </ul>
-          </div>
-        </div>
-        <div class="level-grid">
-          <div class="level-block">
-            <h3>白盒规范</h3>
-            <p>Blockout_Box 原点在<b>角点</b>，引擎基础形体原点<b>居中</b>；材质用 <b>M_WW_*</b> 系列区分功能色（青=可交互、金=关键道具、红=危险、绿=植被）；主关卡放玩法 Actor，室内细节与海岛追逐拆成两个<b>流送子关卡</b>。</p>
-          </div>
-          <div class="level-block">
-            <h3>每次改完的验收</h3>
-            <ul class="highlight-list">
-              <li>Live Coding 编译通过（无红色报错）</li>
-              <li>停止 Play → 重新 Play，否则看到的是旧世界</li>
-              <li>走进触发区，确认触发位置在预期处</li>
-              <li>检查第二次 Play 是否状态残留</li>
-              <li>涉及演出则完整跑一遍</li>
-              <li>保存关卡（Ctrl+S），否则摆放改动会丢</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer class="site-footer">
